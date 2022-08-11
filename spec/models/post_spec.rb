@@ -11,23 +11,11 @@ RSpec.describe Post, type: :model do
     expect(author.posts_counter).to eq(3)
   end
 
-  it 'title should be Hello' do
+  it 'testing data' do
     expect(subject.title).to eq('Hello')
-  end
-
-  it 'text should exist' do
     expect(subject.text).to eq('testing posts')
-  end
-
-  it 'comments_couter' do
     expect(subject.comments_couter).to eq(0)
-  end
-
-  it 'likes_counter' do
     expect(subject.likes_counter).to eq(4)
-  end
-
-  it 'should have an id' do
     expect(subject.author_id).not_to be_nil
   end
 
