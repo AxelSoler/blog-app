@@ -7,6 +7,10 @@ RSpec.describe Post, type: :model do
   
   before { subject.save }
 
+  it 'author posts_counter should be 3' do
+    expect(author.posts_counter).to eq(3)
+  end
+
   it 'title should be Hello' do
     expect(subject.title).to eq('Hello')
   end
