@@ -17,9 +17,6 @@ RSpec.describe Post, type: :model do
     expect(subject.comments_couter).to eq(0)
     expect(subject.likes_counter).to eq(4)
     expect(subject.author_id).not_to be_nil
-  end
-
-  it 'validate the title' do
     expect(subject.valid?).to be_truthy
   end
 
@@ -41,5 +38,25 @@ RSpec.describe Post, type: :model do
   it 'validate likes_counter' do
     subject.likes_counter = -1
     expect(subject.valid?).to be_falsy
+  end
+
+  it 'recent_post_coments should return last 5 comments' do
+    comment1 = Comment.new(post: subject, author:, text: '1')
+    comment1.save
+    comment2 = Comment.new(post: subject, author:, text: '2')
+    comment2.save
+    comment3 = Comment.new(post: subject, author:, text: '3')
+    comment3.save
+    comment4 = Comment.new(post: subject, author:, text: '4')
+    comment4.save
+    comment5 = Comment.new(post: subject, author:, text: '5')
+    comment5.save
+    comment6 = Comment.new(post: subject, author:, text: '6')
+    comment6.save
+    comment7 = Comment.new(post: subject, author:, text: '7')
+    comment7.save
+    comment8 = Comment.new(post: subject, author:, text: '8')
+    comment8.save
+    expect(subject.recent_post_coments).to eq([comment8, comment7, comment6, comment5, comment4])
   end
 end
