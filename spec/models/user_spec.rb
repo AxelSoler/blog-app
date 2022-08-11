@@ -6,6 +6,37 @@ RSpec.describe User, type: :model do
   before { subject.save }
 
   it 'name should be Axel' do
-    subject.name = 'Axel'
+    expect(subject.name).to eq('Axel')
+  end
+
+  it 'photo should exist' do
+    expect(subject.photo).to eq('https.something.com')
+  end
+
+  it 'bio should existl' do
+    expect(subject.bio).to eq('This is a good story')
+  end
+
+  it 'posts_counter' do
+    expect(subject.posts_counter).to eq(2)
+  end
+
+  it 'should have an id' do
+    expect(subject.id).not_to be_nil
+  end
+
+  it 'validate the name' do
+    subject.name = nil
+    expect(subject.valid?).to be_falsy
+  end
+
+  it 'validate posts_counter' do
+    subject.posts_counter = -1
+    expect(subject.valid?).to be_falsy
+  end
+
+  it 'validate posts_counter' do
+    subject.posts_counter = 0
+    expect(subject.valid?).to be_truthy
   end
 end
