@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   author = User.new(name: 'Axel', photo: 'https.something.com', bio: 'This is a good story', posts_counter: 2)
   author.save
-  subject { Post.new(author: author, title: 'Hello', text: 'testing posts', comments_couter: 0, likes_counter: 4) }
-  
+  subject { Post.new(author:, title: 'Hello', text: 'testing posts', comments_couter: 0, likes_counter: 4) }
+
   before { subject.save }
 
   it 'author posts_counter should be 3' do
