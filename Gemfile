@@ -74,3 +74,4 @@ end
 
 gem 'ffi'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rails-controller-testing'
