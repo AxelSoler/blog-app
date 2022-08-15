@@ -1,9 +1,7 @@
 class AllUsersController < ActionController
-  def list_users
-    /users
+  def index
   end
 
-  def show_user
-    /users/:id
+  def show
   end
 end
