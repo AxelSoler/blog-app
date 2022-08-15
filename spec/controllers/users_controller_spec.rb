@@ -3,22 +3,25 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET users page #index' do
     before(:each) do
-      get "/users"
+      get '/users'
     end
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
-    it "renders 'index' template" do
+    it 'renders index template' do
       expect(response).to render_template('index')
+    end
+    it 'body includes correct placeholder text' do
+      expect(response).to has_text('list of all users')
     end
   end
   describe 'Show the chosen user' do
     before(:each) do
-      get "/users/478"
+      get '/users/478'
     end
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'show' template" do

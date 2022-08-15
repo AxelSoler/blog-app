@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET posts page #index' do
     before(:each) do
-      get "/users/326/posts"
+      get '/users/326/posts'
     end
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'index' template" do
@@ -15,10 +15,10 @@ RSpec.describe 'Posts', type: :request do
   end
   describe 'Show the chosen post' do
     before(:each) do
-      get "/users/326/posts/12"
+      get '/users/326/posts/12'
     end
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'show' template" do
