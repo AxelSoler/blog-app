@@ -13,7 +13,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
     it 'body includes correct placeholder text' do
-      assert_select "h2", 'list of all users'
+      assert_select 'h2', 'list of all users'
     end
   end
   describe 'Show the chosen user' do
@@ -26,6 +26,9 @@ RSpec.describe 'Users', type: :request do
     end
     it "renders 'show' template" do
       expect(response).to render_template('show')
+    end
+    it 'body includes correct placeholder text' do
+      assert_select 'h2', 'selected user'
     end
   end
 end
@@ -42,6 +45,9 @@ RSpec.describe 'Posts', type: :request do
     it "renders 'index' template" do
       expect(response).to render_template('index')
     end
+    it 'body includes correct placeholder text' do
+      assert_select 'h2', 'list of all posts for a given user'
+    end
   end
   describe 'Show the chosen post' do
     before(:each) do
@@ -53,6 +59,9 @@ RSpec.describe 'Posts', type: :request do
     end
     it "renders 'show' template" do
       expect(response).to render_template('show')
+    end
+    it 'body includes correct placeholder text' do
+      assert_select 'h2', 'selected post'
     end
   end
 end
