@@ -5,8 +5,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
-  validates :comments_couter, comparison: { greater_than_or_equal_to: 0 }, allow_nil: true
-  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }, allow_nil: true
+  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
 
   after_save :updates_user_posts_counter
 
@@ -17,6 +17,6 @@ class Post < ApplicationRecord
   private
 
   def updates_user_posts_counter
-    author.posts_counter.nil? ? author.update(posts_counter: 1) : author.increment!(:posts_counter)
+    author.increment!(:posts_counter)
   end
 end

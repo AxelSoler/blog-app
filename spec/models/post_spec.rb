@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   author = User.new(name: 'Axel', photo: 'https.something.com', bio: 'This is a good story', posts_counter: 2)
   author.save
-  subject { Post.new(author:, title: 'Hello', text: 'testing posts', comments_couter: 0, likes_counter: 4) }
+  subject { Post.new(author:, title: 'Hello', text: 'testing posts', comments_counter: 0, likes_counter: 4) }
 
   before { subject.save }
 
@@ -14,7 +14,7 @@ RSpec.describe Post, type: :model do
   it 'testing data' do
     expect(subject.title).to eq('Hello')
     expect(subject.text).to eq('testing posts')
-    expect(subject.comments_couter).to eq(0)
+    expect(subject.comments_counter).to eq(0)
     expect(subject.likes_counter).to eq(4)
     expect(subject.author_id).not_to be_nil
     expect(subject.valid?).to be_truthy
@@ -30,8 +30,8 @@ RSpec.describe Post, type: :model do
     expect(subject.valid?).to be_falsy
   end
 
-  it 'validate comments_couter' do
-    subject.comments_couter = -1
+  it 'validate comments_counter' do
+    subject.comments_counter = -1
     expect(subject.valid?).to be_falsy
   end
 
