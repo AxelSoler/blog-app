@@ -12,9 +12,9 @@ RSpec.describe 'Users', type: :request do
     it 'renders index template' do
       expect(response).to render_template('index')
     end
-    # it 'body includes correct placeholder text' do
-    #   expect(response).to has_text('list of all users')
-    # end
+    it 'body includes correct placeholder text' do
+      assert_select "h2", 'list of all users'
+    end
   end
   describe 'Show the chosen user' do
     before(:each) do
