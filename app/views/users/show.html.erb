@@ -5,6 +5,34 @@
   </head>
 
   <body>
-    <h2>selected user</h2>
+    <section class= 'container'>
+      <h2>User</h2>
+      <div class= 'user'>
+        <div>
+          <img class= 'image' src= <%= @user.photo %>>
+        </div>
+        <div class= 'user_info'>
+          <p>Name: <%= @user.name %></p>
+          <p>Number of posts: <%= @user.posts_counter %></p>
+          <p>id: <%= @user.id %></p>
+        </div>
+      </div>
+      <div class= 'bio'>
+        <p>Bio:</p>
+        <p><%= @user.bio %></p>
+      </div>
+      <h3>LAST POSTS</h3>
+      <% @user.recent_posts_user.each do |post| %>
+        <div class= 'post'>
+          <p>Post #<%= post.id %></p>
+          <p><%= post.text %></p>
+          <div class= "counters">
+            <p>Comments: <%= post.comments_counter %></p>
+            <p>Likes: <%= post.likes_counter %></p>
+          </div>
+        </div>
+      <% end %>
+      <button class= 'detailsbtn'>See all posts (not working yet)</button>
+    </section>
   </body>
 </html>

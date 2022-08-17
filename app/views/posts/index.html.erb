@@ -5,6 +5,36 @@
   </head>
 
   <body>
-    <h2>list of all posts for a given user</h2>
+    <section class= 'container'>
+      <h2>list of all posts for a given user</h2>
+      <div class= 'user'>
+        <div>
+          <img class= 'image' src= <%= @user.photo %>>
+        </div>
+        <div class= 'user_info'>
+          <p>Name: <%= @user.name %></p>
+          <p>Number of posts: <%= @user.posts_counter %></p>
+          <p>id: <%= @user.id %></p>
+        </div>
+      </div>
+      <% @posts.each do |post| %>
+        <div class= 'post'>
+          <p>Post #<%= post.id %></p>
+          <p><%= post.text %></p>
+          <div class= "counters">
+            <p>Comments: <%= post.comments_counter %></p>
+            <p>Likes: <%= post.likes_counter %></p>
+          </div>
+        </div>
+        <div class= 'comments'>
+          <% post.recent_post_coments.each do |comment| %>
+            <div class= 'comment'>
+              <p><%= comment.author.name %>: <%= comment.text %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <button class= 'detailsbtn'>Pagination (not working yet)</button>
+    </section>
   </body>
 </html>

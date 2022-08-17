@@ -5,6 +5,25 @@
   </head>
 
   <body>
-    <h2>selected post</h2>
+    <section class= 'container'>
+      <h2>POST</h2>
+      <div class= 'post'>
+        <div class= 'top'>
+          <p>Post #<%= @post.id %> by <%= @post.author.name %></p>
+          <div class= "counters">
+            <p>Comments: <%= @post.comments_counter %></p>
+            <p>Likes: <%= @post.likes_counter %></p>
+          </div>
+        </div>
+        <p><%= @post.text %></p>
+      </div>
+      <div class= 'comments'>
+        <% @comments.each do |comment| %>
+          <div class= 'comment'>
+            <p><%= comment.author.name %>: <%= comment.text %></p>
+          </div>
+        <% end %>
+      </div>
+    </section>
   </body>
 </html>
