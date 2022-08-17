@@ -2,14 +2,16 @@
  *= require_tree .
  *= require_self
  */
- .container {
+.container {
   width: 500px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
- }
+}
 
- h2 {
+h2 {
   text-align: center;
- }
+}
 
 .user {
   display: flex;
@@ -29,7 +31,7 @@
 }
 
 .image {
- width: 100px;
+  width: 100px;
 }
 
 .bio {
@@ -58,4 +60,9 @@
 
 .top {
   display: flex;
+}
+
+.detailsbtn {
+  width: 200px;
+  margin: 48px auto;
 }
