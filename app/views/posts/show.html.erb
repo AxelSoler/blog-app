@@ -9,7 +9,7 @@
       <h2>POST</h2>
       <div class= 'post'>
         <div class= 'top'>
-          <p>Post #<%= @post.id %> by author: <%= @post.author_id %></p>
+          <p>Post #<%= @post.id %> by <%= @post.author.name %></p>
           <div class= "counters">
             <p>Comments: <%= @post.comments_counter %></p>
             <p>Likes: <%= @post.likes_counter %></p>
@@ -20,7 +20,7 @@
       <div class= 'comments'>
         <% @comments.each do |comment| %>
           <div class= 'comment'>
-            <p>Author <%= comment.author_id %>: <%= comment.text %></p>
+            <p><%= comment.author.name %>: <%= comment.text %></p>
           </div>
         <% end %>
       </div>

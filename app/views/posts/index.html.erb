@@ -29,7 +29,7 @@
         <div class= 'comments'>
           <% post.recent_post_coments.each do |comment| %>
             <div class= 'comment'>
-              <p>Author <%= comment.author_id %>: <%= comment.text %></p>
+              <p><%= comment.author.name %>: <%= comment.text %></p>
             </div>
           <% end %>
         </div>
