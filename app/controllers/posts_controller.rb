@@ -4,5 +4,8 @@ class PostsController < ApplicationController
     @posts = @user.posts.order(:id)
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.order(:id)
+  end
 end

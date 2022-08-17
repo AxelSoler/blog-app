@@ -55,3 +55,7 @@
   padding: 0 12px;
   margin-bottom: 24px;
 }
+
+.top {
+  display: flex;
+}
