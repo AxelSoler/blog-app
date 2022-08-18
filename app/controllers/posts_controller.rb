@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(author: @user, title: post_params[:title], text: post_params[:text])
+    @post = Post.new(author: current_user, title: post_params[:title], text: post_params[:text])
     if @post.save
       redirect_to user_posts_path
     else
