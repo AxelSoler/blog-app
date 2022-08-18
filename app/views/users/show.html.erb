@@ -14,14 +14,16 @@
       </div>
       <h3>LAST POSTS</h3>
       <% @user.recent_posts_user.each do |post| %>
-        <div class= 'post'>
-          <p>Post #<%= post.id %></p>
-          <p><%= post.text %></p>
-          <div class= "counters">
-            <p>Comments: <%= post.comments_counter %></p>
-            <p>Likes: <%= post.likes_counter %></p>
+        <%= link_to user_post_path(post.author.id, post.id) do %>
+          <div class= 'post'>
+            <p>Post #<%= post.id %></p>
+            <p><%= post.text %></p>
+            <div class= "counters">
+              <p>Comments: <%= post.comments_counter %></p>
+              <p>Likes: <%= post.likes_counter %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
       <%= link_to user_posts_path(@user.id) do %>
         <button class= 'detailsbtn'>See all posts</button>
