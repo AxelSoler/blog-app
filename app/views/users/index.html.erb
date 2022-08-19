@@ -7,18 +7,7 @@
   <body>
     <section class= 'container'>
       <h2>LIST OF USERS</h2>
-      <% @people.each do |person| %>
-        <div class= 'user'>
-          <div>
-            <img class= 'image' src= <%= person.photo %>>
-          </div>
-          <div class= 'user_info'>
-            <p>Name: <%= person.name %></p>
-            <p>Number of posts: <%= person.posts_counter %></p>
-            <p>id: <%= person.id %></p>
-          </div>
-        </div>
-      <% end %>
+      <%= render @people %>
     </section>
   </body>
 </html>

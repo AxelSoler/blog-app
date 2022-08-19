@@ -7,32 +7,28 @@
   <body>
     <section class= 'container'>
       <h2>User</h2>
-      <div class= 'user'>
-        <div>
-          <img class= 'image' src= <%= @user.photo %>>
-        </div>
-        <div class= 'user_info'>
-          <p>Name: <%= @user.name %></p>
-          <p>Number of posts: <%= @user.posts_counter %></p>
-          <p>id: <%= @user.id %></p>
-        </div>
-      </div>
+      <%= render @user %>
       <div class= 'bio'>
         <p>Bio:</p>
         <p><%= @user.bio %></p>
       </div>
       <h3>LAST POSTS</h3>
       <% @user.recent_posts_user.each do |post| %>
-        <div class= 'post'>
-          <p>Post #<%= post.id %></p>
-          <p><%= post.text %></p>
-          <div class= "counters">
-            <p>Comments: <%= post.comments_counter %></p>
-            <p>Likes: <%= post.likes_counter %></p>
+        <%= link_to user_post_path(post.author.id, post.id) do %>
+          <div class= 'post'>
+            <p>Post #<%= post.id %></p>
+            <p><%= post.text %></p>
+            <div class= "counters">
+              <%= render 'posts/like', post: %>
+              <p>Comments: <%= post.comments_counter %></p>
+              <p>Likes: <%= post.likes_counter %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-      <button class= 'detailsbtn'>See all posts (not working yet)</button>
+      <%= link_to user_posts_path(@user.id) do %>
+        <button class= 'detailsbtn'>See all posts</button>
+      <% end %>
     </section>
   </body>
 </html>
