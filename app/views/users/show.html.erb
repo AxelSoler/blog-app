@@ -19,6 +19,7 @@
             <p>Post #<%= post.id %></p>
             <p><%= post.text %></p>
             <div class= "counters">
+              <%= render 'posts/like', post: %>
               <p>Comments: <%= post.comments_counter %></p>
               <p>Likes: <%= post.likes_counter %></p>
             </div>

@@ -49,6 +49,7 @@ h2 {
 .counters {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 200px;
   margin-left: auto;
 }
