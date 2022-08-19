@@ -4,15 +4,27 @@
 
 > The Blog app is a classic example of a blog website. Fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+## Live Demo (not available yet)
 
-## Setup Project
+[Live Demo Link](https://livedemo.com)
+
+## Getting Started
+
+### Setup Project
 - Clone repo.
+
+### Install
 - Install dependencies with `bundle install`
 
-## Usage
+### Usage
+- Run `rails db:create`
+- Run `rails db:migrate`
+- Run `rails s`
+
+### Tests
 - Run test with `rspec spec -f doc lib`
 
-## Authors
+### Authors
 
 👤 **Axel Soler**
 
