@@ -16,6 +16,11 @@
           </div>
         </div>
         <p><%= @post.text %></p>
+        <%= form_with model: @like, url: user_post_likes_path(@post.author_id, @post.id), local: true, method: :post do |f| %>
+          <div>
+            <%= f.submit "LIKE" %>
+          </div>
+        <% end %>
       </div>
       <%= link_to new_user_post_comment_path(@post.author, @post) do %>
         <div class= 'addComment'>
