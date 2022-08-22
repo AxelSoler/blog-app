@@ -13,7 +13,7 @@
         <p><%= @user.bio %></p>
       </div>
       <h3>LAST POSTS</h3>
-      <% @user.recent_posts_user.each do |post| %>
+      <% @user.recent_posts_user.includes([:author]).each do |post| %>
         <%= link_to user_post_path(post.author.id, post.id) do %>
           <div class= 'post'>
             <p>Post #<%= post.id %></p>
