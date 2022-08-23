@@ -24,7 +24,7 @@
         </div>
       <% end %>
       <div class= 'comments'>
-        <% @comments.each do |comment| %>
+        <% @comments.includes([:author]).each do |comment| %>
           <div class= 'comment'>
             <p><%= comment.author.name %>: <%= comment.text %></p>
           </div>

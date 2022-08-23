@@ -17,6 +17,7 @@
 - Install dependencies with `bundle install`
 
 ### Usage
+- Create user hellorails with password 'hellorails'
 - Run `rails db:create`
 - Run `rails db:migrate`
 - Run `rails s`
@@ -32,7 +33,10 @@
 - LinkedIn: [Axel Soler](https://www.linkedin.com/in/axel-soler-685985232/)
 - Twitter: [Axel Soler](https://twitter.com/AxelSoler18)
 
+👤 **Saifullah**
 
+- GitHub: [@saifullah767](https://github.com/saifullah767)
+- LinkedIn: [saifullah](https://www.linkedin.com/in/saifkj/)
 
 ## 🤝 Contributing
 
