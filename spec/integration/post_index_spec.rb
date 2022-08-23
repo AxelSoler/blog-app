@@ -11,7 +11,7 @@ RSpec.describe 'Posts', type: :feature do
     @post4 = Post.create(author: @user2, title: 'Hello', text: 'post 4')
     @post5 = Post.create(author: @user2, title: 'Hello', text: 'post 5')
     @post6 = Post.create(author: @user2, title: 'Hello', text: 'post 6')
-    @comment1 = Comment.create(post:@post6, author: @user2, text: 'testing comments!')
+    @comment1 = Comment.create(post: @post6, author: @user2, text: 'testing comments!')
     @likes1 = Like.create(post: @post6, author: @user1)
     visit user_posts_path(@user2)
   end
@@ -62,6 +62,5 @@ RSpec.describe 'Posts', type: :feature do
     within('button.detailsbtn') do
       expect(page).to have_content('Pagination')
     end
-end
-
+  end
 end

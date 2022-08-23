@@ -17,6 +17,7 @@
 - Install dependencies with `bundle install`
 
 ### Usage
+- Create user hellorails with password 'hellorails'
 - Run `rails db:create`
 - Run `rails db:migrate`
 - Run `rails s`
