@@ -37,9 +37,6 @@
 - GitHub: [@saifullah767](https://github.com/saifullah767)
 - LinkedIn: [saifullah](https://www.linkedin.com/in/saifkj/)
 
-
-
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
