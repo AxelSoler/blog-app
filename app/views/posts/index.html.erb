@@ -11,6 +11,7 @@
       <% @posts.includes([:author]).each do |post| %>
         <%= link_to user_post_path(post.author.id, post.id) do %>
           <div class= 'post'>
+          <p> <b> Title: <%= post.title%> <b></p>
             <p>Post #<%= post.id %></p>
             <p><%= post.text %></p>
             <div class= "counters">

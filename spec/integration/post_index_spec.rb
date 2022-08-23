@@ -26,6 +26,14 @@ RSpec.describe 'Posts', type: :feature do
     expect(posts.size).to eq(5)
   end
 
+  it 'Each post has a title' do
+    expect(page).to have_content(@post2.title)
+    expect(page).to have_content(@post3.title)
+    expect(page).to have_content(@post4.title)
+    expect(page).to have_content(@post5.title)
+    expect(page).to have_content(@post6.title)
+  end
+
   it 'link to post show' do
     expect(page).to have_link(nil, href: user_post_path(@user2, @post2))
     expect(page).to have_link(nil, href: user_post_path(@user2, @post3))
