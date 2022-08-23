@@ -11,6 +11,8 @@ RSpec.describe 'Posts', type: :feature do
     @post4 = Post.create(author: @user2, title: 'Hello', text: 'post 4')
     @post5 = Post.create(author: @user2, title: 'Hello', text: 'post 5')
     @post6 = Post.create(author: @user2, title: 'Hello', text: 'post 6')
+    @comment1 = Comment.create(post:@post6, author: @user2, text: 'testing comments!')
+    @likes1 = Like.create(post: @post6, author: @user1)
     visit user_posts_path(@user2)
   end
 
@@ -41,4 +43,25 @@ RSpec.describe 'Posts', type: :feature do
     expect(page).to have_link(nil, href: user_post_path(@user2, @post5))
     expect(page).to have_link(nil, href: user_post_path(@user2, @post6))
   end
+
+  it 'Each post has a text' do
+    expect(page).to have_content(@post2.text)
+    expect(page).to have_content(@post3.text)
+    expect(page).to have_content(@post4.text)
+    expect(page).to have_content(@post5.text)
+    expect(page).to have_content(@post6.text)
+  end
+
+  it 'last comment is visible' do
+    expect(page).to have_content(@comment1.text)
+    expect(page).to have_content('Comments: 1')
+    expect(page).to have_content('Likes: 1')
+  end
+
+  it 'button to see all comments' do
+    within('button.detailsbtn') do
+      expect(page).to have_content('Pagination')
+    end
+end
+
 end
