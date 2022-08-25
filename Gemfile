@@ -53,6 +53,7 @@ group :development, :test do
   gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'devise'
+  gem 'cancancan'
 end
 
 group :development do
