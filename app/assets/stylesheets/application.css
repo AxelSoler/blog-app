@@ -68,3 +68,13 @@ h2 {
   width: 200px;
   margin: 48px auto;
 }
+
+.sessionOptions {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.session {
+  display: flex;
+  justify-content: flex-end;
+}

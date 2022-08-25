@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <div class="sessionOptions">
+      <div class="session">
+        <%if user_signed_in?%>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        <%else%>
+          <%= button_to "Sign up", new_user_registration_path, method: :get %>
+          <%= button_to "Log in", user_session_path, method: :get %>
+        <%end%>
+      </div>
+      <div class="alert">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
