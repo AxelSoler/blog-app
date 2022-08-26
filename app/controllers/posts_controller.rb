@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.order(:id)
@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
     @post.destroy
     redirect_to user_posts_path(current_user)
   end

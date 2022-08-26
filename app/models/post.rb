@@ -24,5 +24,4 @@ class Post < ApplicationRecord
   def less_user_posts_counter
     author.decrement!(:posts_counter)
   end
-
 end
