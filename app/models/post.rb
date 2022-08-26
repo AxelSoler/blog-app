@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
 
   after_create :updates_user_posts_counter
+  after_destroy :less_user_posts_counter
 
   def recent_post_coments
     comments.order(created_at: :desc).limit(5)
