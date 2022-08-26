@@ -17,6 +17,7 @@
           </div>
         </div>
         <p><%= @post.text %></p>
+        <%= button_to "Delete Post", user_post_path(@post.author_id, @post), method: :delete %>
       </div>
       <%= link_to new_user_post_comment_path(@post.author, @post) do %>
         <div class= 'addComment'>
