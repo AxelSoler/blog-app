@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @post = Post.find(params[:post_id])
@@ -11,9 +11,9 @@ class Api::CommentsController < ApplicationController
   def create
     comment = Comment.new(author: current_user, post_id: params[:post_id], text: comment_params[:text])
     if comment.save
-      render json: { message: 'Yes' }, status: :ok
+      render json: { message: 'comment sent' }, status: :ok
     else
-      render json: { message: 'no' }, status: 400
+      render json: { message: 'there has been a problem' }, status: 400
     end
   end
 
@@ -23,4 +23,3 @@ class Api::CommentsController < ApplicationController
     params.require(:comment).permit(:text)
   end
 end
-  
