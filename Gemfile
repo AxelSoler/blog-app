@@ -54,6 +54,8 @@ group :development, :test do
   gem 'cancancan'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'devise'
+  gem 'devise-jwt'
+  gem 'rack-cors'
 end
 
 group :development do
